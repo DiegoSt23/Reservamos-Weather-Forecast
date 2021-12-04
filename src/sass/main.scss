@@ -1,0 +1,10 @@
+@import "./componentStyles/header";
+@import "./componentStyles/results";
+@import "./componentStyles/weather";
+@import "./componentStyles/error";
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

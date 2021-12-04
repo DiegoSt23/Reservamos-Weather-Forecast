@@ -1,0 +1,98 @@
+.weather-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 200px;
+  padding: 30px;
+  background-color: turquoise;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  h2 {
+    color: rgb(238, 64, 151);
+    font-family: 'Pacifico', cursive;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+  }
+  h3, h4 {
+    color: rgb(56, 56, 56); 
+  }
+  .info-nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .return-icon {
+      font-size: 2rem;
+      color: rgb(238, 64, 151);
+      &:hover {   
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+    }
+    .city-info {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .forecast-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    .forecast-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 24%;
+      padding: 30px 10px;
+      border-radius: 10px;
+      background-color: rgb(76, 236, 220);
+      box-shadow: 5px 5px 10px 5px rgb(58, 204, 189);
+      margin-top: 20px;
+      .description {
+        margin-bottom: 20px;
+      }
+      h4 {
+        color: rgb(238, 64, 151);
+      }
+      p {
+        color: rgb(65, 65, 65);
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .weather-container {
+    width: 90%;
+    .info-nav-container {
+      .city-info {
+        width: 70%;
+      }
+    }
+    .forecast-container {
+      .forecast-card {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .weather-container {
+    width: 90%;
+    margin-top: 150px;
+    .info-nav-container {
+      .city-info {
+        width: 80%;
+      }
+    }
+    .forecast-container {
+      .forecast-card {
+        width: 100%;
+      }
+    }
+  }
+}

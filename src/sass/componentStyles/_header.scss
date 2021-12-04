@@ -1,0 +1,128 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  backdrop-filter: blur(20px);
+  background-color: rgba(15, 15, 34, 0.747);
+  z-index: 1;
+  
+  .logo-container {
+    h1 {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+    }
+  }
+
+  .responsive-search-icon {
+    display: none;
+  }
+  
+  .search-box-container {
+    width: 35%;
+    form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: rgba(31, 31, 53, 0.795);
+      padding: 5px;
+      border-radius: 10px;
+      .search-icon {
+        width: 5%;
+        text-align: center;
+      }
+      input {
+        width: 75%;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: transparent;
+        outline: none;
+        color: white;
+      }
+      button {
+        width: 20%;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: turquoise;
+        border: transparent;
+        transition: all ease 0.3s;
+        font-weight: bold;
+        &:hover {
+          background-color: rgb(117, 255, 241);
+          transition: 0.3s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+
+@media screen and (max-width: 992px) {
+  .header {
+    .search-box-container {
+      width: 60%;
+    }
+  }  
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    .responsive-search-icon {
+      display: block;
+      z-index: 2;
+    }
+    .search-box-container {
+      display: none;
+    }
+  }
+  
+  // Responsive Nav Bar
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(15, 15, 34);
+    display: flex;
+    justify-content: flex-end;  
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .responsive-search-bar {
+    width: 100%;
+    padding: 10px;
+    form {
+      width: 85%;
+      display: flex;
+      align-items: center;
+      background-color: rgba(31, 31, 53, 0.795);
+      padding: 5px;
+      border-radius: 10px;
+      input {
+        width: 80%;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: transparent;
+        outline: none;
+        color: white;
+      }
+      button {
+        width: 20%;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: turquoise;
+        border: transparent;
+        outline: none;
+      }
+    }
+  }
+}

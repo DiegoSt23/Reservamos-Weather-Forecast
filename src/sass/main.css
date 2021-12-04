@@ -1,0 +1,383 @@
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  position: fixed;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(15, 15, 34, 0.747);
+  z-index: 1;
+}
+
+.header .logo-container h1 {
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+}
+
+.header .responsive-search-icon {
+  display: none;
+}
+
+.header .search-box-container {
+  width: 35%;
+}
+
+.header .search-box-container form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(31, 31, 53, 0.795);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.header .search-box-container form .search-icon {
+  width: 5%;
+  text-align: center;
+}
+
+.header .search-box-container form input {
+  width: 75%;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  color: white;
+}
+
+.header .search-box-container form button {
+  width: 20%;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: turquoise;
+  border: transparent;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  font-weight: bold;
+}
+
+.header .search-box-container form button:hover {
+  background-color: #75fff1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .header .search-box-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header .responsive-search-icon {
+    display: block;
+    z-index: 2;
+  }
+  .header .search-box-container {
+    display: none;
+  }
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0f0f22;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .responsive-search-bar {
+    width: 100%;
+    padding: 10px;
+  }
+  .responsive-search-bar form {
+    width: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: rgba(31, 31, 53, 0.795);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .responsive-search-bar form input {
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+    color: white;
+  }
+  .responsive-search-bar form button {
+    width: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: turquoise;
+    border: transparent;
+    outline: none;
+  }
+}
+
+.results-container {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 200px;
+  margin-bottom: 60px;
+}
+
+.results-container .card-container {
+  width: 25%;
+  padding: 20px;
+}
+
+.results-container .card-container .link {
+  text-decoration: none;
+  color: white;
+}
+
+.results-container .card-container .city-card {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: turquoise;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.results-container .card-container .city-card h2 {
+  color: #ee4097;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.3rem;
+}
+
+.results-container .card-container .city-card h3, .results-container .card-container .city-card h4 {
+  color: #383838;
+}
+
+.results-container .card-container .city-card:hover {
+  -webkit-box-shadow: 5px 5px 30px 10px black;
+          box-shadow: 5px 5px 30px 10px black;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .results-container {
+    width: 90%;
+  }
+  .results-container .card-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .results-container {
+    width: 100%;
+    margin-top: 150px;
+  }
+  .results-container .card-container {
+    width: 100%;
+  }
+}
+
+.weather-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 200px;
+  padding: 30px;
+  background-color: turquoise;
+  border-radius: 10px;
+  margin-bottom: 60px;
+}
+
+.weather-container h2 {
+  color: #ee4097;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.weather-container h3, .weather-container h4 {
+  color: #383838;
+}
+
+.weather-container .info-nav-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather-container .info-nav-container .return-icon {
+  font-size: 2rem;
+  color: #ee4097;
+}
+
+.weather-container .info-nav-container .return-icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.weather-container .info-nav-container .city-info {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.weather-container .forecast-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+
+.weather-container .forecast-container .forecast-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 24%;
+  padding: 30px 10px;
+  border-radius: 10px;
+  background-color: #4cecdc;
+  -webkit-box-shadow: 5px 5px 10px 5px #3accbd;
+          box-shadow: 5px 5px 10px 5px #3accbd;
+  margin-top: 20px;
+}
+
+.weather-container .forecast-container .forecast-card .description {
+  margin-bottom: 20px;
+}
+
+.weather-container .forecast-container .forecast-card h4 {
+  color: #ee4097;
+}
+
+.weather-container .forecast-container .forecast-card p {
+  color: #414141;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .weather-container {
+    width: 90%;
+  }
+  .weather-container .info-nav-container .city-info {
+    width: 70%;
+  }
+  .weather-container .forecast-container .forecast-card {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .weather-container {
+    width: 90%;
+    margin-top: 150px;
+  }
+  .weather-container .info-nav-container .city-info {
+    width: 80%;
+  }
+  .weather-container .forecast-container .forecast-card {
+    width: 100%;
+  }
+}
+
+.error-container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=main.css.map */
