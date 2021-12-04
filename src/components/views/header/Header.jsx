@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // React Router
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
 // Components
 import ResponsiveSearchBar from "./responsiveSearchBar/ResponsiveSearchBar";
@@ -36,13 +36,15 @@ const Header = ({ setSearch }) => {
   return (
     <header className="header">
       <div className="logo-container">
-        <motion.h1
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "just", duration: 1 }}
-        >
-          Reservamos
-        </motion.h1>
+        <Link to="/" className="link">
+          <motion.h1
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "just", duration: 1 }}
+          >
+            Reservamos
+          </motion.h1>
+        </Link>
       </div>
       {modalOpen ? (
         <AiOutlineClose
@@ -60,7 +62,7 @@ const Header = ({ setSearch }) => {
           <BsSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Busca cualquier ciudad en Mexico o EUA"
+            placeholder="Busca cualquier ciudad en México o EUA"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
@@ -73,11 +75,11 @@ const Header = ({ setSearch }) => {
         onExitComplete={() => null}
       >
         {modalOpen && (
-          <ResponsiveSearchBar 
-            modalOpen={modalOpen} 
+          <ResponsiveSearchBar
+            modalOpen={modalOpen}
             handleClose={close}
             setSearch={setSearch}
-            navigate={navigate} 
+            navigate={navigate}
           />
         )}
       </AnimatePresence>

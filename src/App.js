@@ -9,6 +9,7 @@ import { getCity } from "./services/apiRequests";
 
 //  Components
 import Header from "./components/views/header/Header";
+import WelcomeMessage from "./components/WelcomeMessage";
 import Results from "./components/views/results/Results";
 import Weather from "./components/views/weather/Weather";
 import Error from "./components/views/error/Error";
@@ -16,7 +17,7 @@ import Error from "./components/views/error/Error";
 function App() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
-  
+
   useEffect(() => {
     if (search) {
       const func = async () => {
@@ -36,12 +37,21 @@ function App() {
       <Router>
         <Header setSearch={setSearch} />
         <Routes>
-          <Route path="/" element={<Results results={results} />} />
+          <Route
+            path="/"
+            element={
+              results.length > 0 ? (
+                <Results results={results} />
+              ) : (
+                <WelcomeMessage />
+              )
+            }
+          />
           <Route
             path="/:city/:state/:country/weather/:lat/:long"
             element={<Weather />}
           />
-          <Route path="*" element={<Error/>} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </div>

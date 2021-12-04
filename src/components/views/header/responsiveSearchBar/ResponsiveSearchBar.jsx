@@ -52,7 +52,7 @@ const ResponsiveSearchBar = ({handleClose, setSearch, navigate}) => {
         <form>
           <input
             type="text"
-            placeholder="Busca cualquier ciudad en Mexico o EUA"
+            placeholder="Busca cualquier ciudad en México o EUA"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />

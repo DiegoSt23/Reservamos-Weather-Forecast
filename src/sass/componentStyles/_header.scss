@@ -10,10 +10,14 @@
   z-index: 1;
   
   .logo-container {
-    h1 {
-      margin: 0;
-      font-family: 'Pacifico', cursive;
-    }
+    .link {
+      text-decoration: none;
+      h1 {
+        margin: 0;
+        font-family: 'Pacifico', cursive;
+        color: white;
+      }
+    }  
   }
 
   .responsive-search-icon {
