@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Components
 import Backdrop from "./Backdrop";
+
+// useScreenSize Hook
+import useWindowDimensions from "../../../../useWindowDimensions/useWindowDimensions";
 
 // Framer Motion
 import { motion } from "framer-motion";
 
 const ResponsiveSearchBar = ({handleClose, setSearch, navigate}) => {
+  const { width } = useWindowDimensions();
   const [value, setValue] = useState("");
+
+  useEffect(() => {
+    if (width > 576) {
+      handleClose()
+    }
+  }, [width, handleClose]);
 
   const dropIn = {
     hidden: {
@@ -52,7 +62,7 @@ const ResponsiveSearchBar = ({handleClose, setSearch, navigate}) => {
         <form>
           <input
             type="text"
-            placeholder="Busca cualquier ciudad en México o EUA"
+            placeholder="Ingresa la ciudad aqui"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
